@@ -1,0 +1,387 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{
+    margin:0;
+    padding:0;
+    border:0;
+    font:inherit;
+    font-size:100%;
+    vertical-align:baseline
+}
+html{
+    line-height:1
+}
+ol,ul{
+    list-style:none
+}
+table{
+    border-collapse:collapse;border-spacing:0
+}
+caption,th,td{
+    text-align:left;
+    font-weight:normal;
+    vertical-align:middle
+}
+q,blockquote{
+    quotes:none
+}
+q:before,q:after,blockquote:before,blockquote:after{
+    content:"";
+    content:none
+}
+a img{
+    border:none
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
+    display:block
+}
+.sprite-sprite,car-preview.Sedan,car-preview.Disabled,car-preview.Truck,car.Sedan,car.Disabled,car.Truck{
+    background-image:url('../images/sprite-s93f0035ef1.png');
+    background-repeat:no-repeat}
+.clearfix:after,app:after,.parking:after{
+    clear:both;display:block;content:''
+}
+.wrapper{
+    position:relative;
+    width:100%;
+    max-width:1200px;
+    margin:0 auto
+}
+body{
+    background-color:#505050;
+    padding:0;
+    margin:0;
+    font-family:'Open Sans', sans-serif;
+    font-size:16px;
+    color:#fff
+}
+h1{
+    text-align:center;
+    text-transform:uppercase;
+    font-size:18px;
+    margin:20px 0 40px 0
+}
+h2{
+    text-align:center;
+    text-transform:uppercase;
+    margin-bottom:10px
+}
+b{
+    font-weight:700;
+    color:#FFA500
+}
+app{
+    display:block
+}
+.parking{
+    float:left;
+    display:block;
+    width:100%;
+    margin-top:20px
+}
+.parking-left,.parking-right{
+    max-width:450px
+}
+.parking-left{
+    float:left
+}
+.parking-left .parking-place:nth-child(2n+1){
+    border-left:none
+}
+.parking-left .parking-place:nth-child(2n+1):after{
+    position:absolute;
+    content:'';
+    width:3px;
+    height:16px;
+    background-color:#fff;
+    left:0;
+    top:-9px
+}
+.parking-left .parking-place:nth-child(2n+1):nth-child(1):after{
+    display:none
+}
+.parking-left .parking-place:nth-child(2n):after{
+    position:absolute;
+    content:'';
+    width:3px;
+    height:16px;
+    background-color:#fff;
+    right:0;
+    top:-9px
+}
+.parking-left .parking-place:nth-child(2n):nth-child(2):after{
+    display:none
+}
+.parking-right{
+    float:right
+}
+.parking-right .parking-place{
+    float:right
+}
+.parking-right .parking-place:nth-child(2n){
+    border-left:none
+}
+.parking-right .parking-place:nth-child(2n):after{
+    position:absolute;
+    content:'';
+    width:3px;
+    height:16px;
+    background-color:#fff;
+    left:0;
+    top:-9px
+}
+.parking-right .parking-place:nth-child(2n):nth-child(2):after{
+    display:none
+}
+.parking-right .parking-place:nth-child(2n+1):after{
+    position:absolute;
+    content:'';
+    width:3px;
+    height:16px;
+    background-color:#fff;
+    right:0;
+    top:-9px
+}
+.parking-right .parking-place:nth-child(2n+1):nth-child(1):after{
+    display:none
+}
+.parking-place{
+    position:relative;
+    float:left;
+    width:220px;
+    height:110px;
+    border-left:3px solid #fff;
+    border-bottom:3px solid #fff
+}
+.parking-place:nth-child(1),.parking-place:nth-child(2){
+    border-top:3px solid #fff
+}
+.parking-place>span{
+    position:absolute;
+    left:55px;
+    top:50%;
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    transform:translateY(-50%);
+    font-size:30px
+}
+.parking-place>span span{
+    font-size:14px;
+    vertical-align:middle;
+    color:#C5A057;
+    text-transform:uppercase
+}
+generate-car{
+    display:block;
+    float:left;
+    width:442px
+}
+.generate-car{
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    position:relative;
+    display:inline-block;
+    border:2px solid #fff;
+    width:100%
+}
+.generate-car form{
+    float:left;
+    width:50%;
+    padding:10px
+}
+.generate-car input,.generate-car select{
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    width:100%;
+    font-size:16px
+}
+.generate-car button{
+    display:block;
+    width:100%;
+    margin-top:20px;
+    font-size:16px;
+    border-radius:5px;
+    box-shadow:1px 1px 4px rgba(0,0,0,0.5);
+    border:none;
+    background-color:green;
+    color:#fff;
+    font-weight:700;
+    padding:8px 0
+}
+.generate-car button:hover{
+    cursor:pointer;
+    background-color:lightsalmon
+}
+.generate-car button[disabled]{
+    background-color:gray
+}
+.generate-car button[disabled]:hover{
+    background-color:gray;
+    cursor:auto;
+    color:#fff
+}
+.generate-car fieldset{
+    position:relative
+}
+.generate-car .car-error{
+    position:absolute;
+    display:block;
+    font-size:10px;
+    color:#ff443a;
+    left:5px;
+    bottom:-14px
+}
+car-preview{
+    position:absolute;
+    top:50%;
+    right:16%;
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    transform:translateY(-50%)
+}
+car-preview.Sedan{
+    background-position:0 -104px;
+    height:120px;
+    width:63px
+}
+car-preview.Disabled{
+    background-position:0 0;
+    height:104px;
+    width:62px
+}
+car-preview.Truck{
+    background-position:0 -224px;
+    height:124px;
+    width:58px
+}
+car{
+    position:absolute;
+    display:block;
+    top:80px;
+    left:50%;
+    -moz-transform:translateX(-50%);
+    -ms-transform:translateX(-50%);
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+    z-index:1
+}
+car.Sedan{
+    background-position:0 -494px;
+    height:178px;
+    width:94px
+}
+car.Disabled{
+    background-position:0 -348px;
+    height:146px;
+    width:88px
+}
+car.Truck{
+    background-position:0 -672px;
+    height:190px;
+    width:86px
+}
+car .car-number{
+    position:absolute;
+    left:50%;
+    -moz-transform:translateX(-50%);
+    -ms-transform:translateX(-50%);
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+    font-size:10px;
+    bottom:-14px;
+    background-color:#fff;color:#222;font-weight:700;
+    padding:1px 5px;
+    display:inline-block;
+    width:55px
+}
+generate-parking{
+    display:block;
+    float:right;
+    max-width:442px
+}
+.generate-parking{
+    border:2px solid #fff;
+    background-color:#AEADB7;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    width:100%
+}
+.generate-parking form{
+    position:relative;
+    padding:19px 10px 10px;
+    text-align:center
+}
+.generate-parking input{
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    margin-left:10px;
+    width:21%;
+    border-radius:5px;
+    line-height:22px;
+    border:none;
+    padding:0 10px;
+    box-shadow:1px 1px 4px rgba(0,0,0,0.4)
+}
+.generate-parking input:first-child{
+    margin-left:0
+}
+.generate-parking .parking-error{
+    position:absolute;
+    display:block;
+    font-size:10px;
+    color:#ff443a;
+    left:20px;
+    bottom:-5px
+}
+.generate-parking button{
+    margin-left:10px;
+    width:24%;
+    line-height:17px;
+    border:none;
+    border-radius:5px;
+    background-color:#2E880C;
+    color:#fff;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:600;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow:1px 1px 4px rgba(0,0,0,0.4)
+}
+.generate-parking button:hover{
+    cursor:pointer
+}
+.generate-parking button[disabled]{
+    background-color:gray
+}
+.generate-parking button[disabled]:hover{
+    background-color:gray;cursor:auto;color:#fff
+}
+.generate-parking table{
+    width:100%;
+    font-size:14px;
+    margin-top:10px;
+    color:#505050
+}
+.generate-parking table tr{
+    margin-bottom:10px
+}
+.generate-parking table tr:first-child td{
+    font-weight:600;
+    font-size:14px
+}
+.generate-parking table td{
+    padding:7px;
+    text-align:center;
+    border:1px solid #ccc;
+    font-size:12px
+}
+.generate-parking table td:first-child{
+    font-weight:600;
+    text-align:left;
+    font-size:14px
+}

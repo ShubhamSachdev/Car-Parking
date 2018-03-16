@@ -1,0 +1,111 @@
+.parking {
+  float: left;
+  display: block;
+  @extend .clearfix;
+  width: 100%;
+  margin-top: 20px;
+  &-left,
+  &-right {
+    max-width: 450px;
+  }
+  &-left {
+    float: left;
+    .parking-place:nth-child(2n + 1) {
+      border-left: none;
+      &:after {
+        position: absolute;
+        content: '';
+        width: 3px;
+        height: 16px;
+        background-color: #fff;
+        left: 0;
+        top: -9px;
+      }
+      &:nth-child(1) {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    .parking-place:nth-child(2n) {
+      &:after {
+        position: absolute;
+        content: '';
+        width: 3px;
+        height: 16px;
+        background-color: #fff;
+        right: 0;
+        top: -9px;
+      }
+      &:nth-child(2) {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+  &-right {
+    float: right;
+    .parking-place {
+      float: right;
+    }
+    .parking-place:nth-child(2n) {
+      border-left: none;
+      &:after {
+        position: absolute;
+        content: '';
+        width: 3px;
+        height: 16px;
+        background-color: #fff;
+        left: 0;
+        top: -9px;
+      }
+      &:nth-child(2) {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    .parking-place:nth-child(2n + 1) {
+      &:after {
+        position: absolute;
+        content: '';
+        width: 3px;
+        height: 16px;
+        background-color: #fff;
+        right: 0;
+        top: -9px;
+      }
+      &:nth-child(1){
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+  &-place {
+    position: relative;
+    float: left;
+    width: 220px;
+    height: 110px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    &:nth-child(1),
+    &:nth-child(2) {
+      border-top: 3px solid #fff;
+    }
+    > span {
+      position: absolute;
+      left: 55px;
+      top: 50%;
+      @include transform(translateY(-50%));
+      font-size: 30px;
+      span {
+        font-size: 14px;
+        vertical-align: middle;
+        color: #C5A057;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
