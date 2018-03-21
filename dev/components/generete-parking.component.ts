@@ -52,7 +52,7 @@ export class GenerateParking {
     public parkingForm: ControlGroup;
 
     constructor(private _fb: FormBuilder,
-                private _parkingService: ParkingService,) {
+                private _parkingService: ParkingService) {
 
         this.parkingForm = this._fb.group({
             total: new Control('10', Validators.required),

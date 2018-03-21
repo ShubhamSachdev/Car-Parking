@@ -1,4 +1,6 @@
-System.register(['angular2/core', './components/parking.component', './components/generete-parking.component'], function(exports_1) {
+System.register(['angular2/core', './components/parking-search.component', './components/parking.component', './components/generete-parking.component'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,14 +10,16 @@ System.register(['angular2/core', './components/parking.component', './component
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, parking_component_1, generete_parking_component_1;
-    var ParkingApp;
+    var core_1, parking_search_component_1, parking_component_1, generete_parking_component_1;
+    var ParkingApp, routes;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            
+            function (parking_search_component_1_1) {
+                parking_search_component_1 = parking_search_component_1_1;
+            },
             function (parking_component_1_1) {
                 parking_component_1 = parking_component_1_1;
             },
@@ -29,16 +33,26 @@ System.register(['angular2/core', './components/parking.component', './component
                 ParkingApp = __decorate([
                     core_1.Component({
                         selector: 'app',
-                        template: "\n  <generate-parking></generate-parking>\n        <parking class=\"parking\"></parking>\n    ",
-                        directives: [ generete_parking_component_1.GenerateParking, parking_component_1.Parking],
+                        template: "\n        <parking-search></parking-search>\n        <router-outlet></router-outlet>\n    ",
+                        directives: [generete_parking_component_1.GenerateParking, parking_component_1.Parking, parking_search_component_1.ParkingSearch],
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ParkingApp);
                 return ParkingApp;
-            })();
+            }());
             exports_1("ParkingApp", ParkingApp);
+            routes = [
+                {
+                    path: 'ft',
+                    component: parking_search_component_1.ParkingSearch
+                },
+                {
+                    path: 'sd',
+                    component: generete_parking_component_1.GenerateParking
+                }
+            ];
         }
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQudHMiXSwibmFtZXMiOlsiUGFya2luZ0FwcCIsIlBhcmtpbmdBcHAuY29uc3RydWN0b3IiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztZQU1BO2dCQVdJQTtnQkFBZUMsQ0FBQ0E7Z0JBWHBCRDtvQkFBQ0EsZ0JBQVNBLENBQUNBO3dCQUNQQSxRQUFRQSxFQUFFQSxLQUFLQTt3QkFDZkEsUUFBUUEsRUFBRUEsMktBS1RBO3dCQUNEQSxVQUFVQSxFQUFFQSxDQUFDQSxvQ0FBV0EsRUFBRUEsNENBQWVBLEVBQUVBLDJCQUFPQSxDQUFDQTtxQkFDdERBLENBQUNBOzsrQkFHREE7Z0JBQURBLGlCQUFDQTtZQUFEQSxDQVpBLEFBWUNBLElBQUE7WUFaRCxtQ0FZQyxDQUFBIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge0NvbXBvbmVudH0gZnJvbSAnYW5ndWxhcjIvY29yZSc7XG5pbXBvcnQge0dlbmVyYXRlQ2FyfSBmcm9tICcuL2NvbXBvbmVudHMvZ2VuZXJhdGUtY2FyLmNvbXBvbmVudCdcbmltcG9ydCB7UGFya2luZ30gZnJvbSAnLi9jb21wb25lbnRzL3BhcmtpbmcuY29tcG9uZW50J1xuLy9pbXBvcnQge0Nhcn0gZnJvbSAnLi9jb21wb25lbnRzL2Nhci5jb21wb25lbnQnXG5pbXBvcnQge0dlbmVyYXRlUGFya2luZ30gZnJvbSAnLi9jb21wb25lbnRzL2dlbmVyZXRlLXBhcmtpbmcuY29tcG9uZW50J1xuXG5AQ29tcG9uZW50KHtcbiAgICBzZWxlY3RvcjogJ2FwcCcsXG4gICAgdGVtcGxhdGU6IGBcbiAgICAgICAgPGgxPlBhcmtpbmcgQ2FyPC9oMT5cbiAgICAgICAgPGdlbmVyYXRlLWNhcj48L2dlbmVyYXRlLWNhcj5cbiAgICAgICAgPGdlbmVyYXRlLXBhcmtpbmc+PC9nZW5lcmF0ZS1wYXJraW5nPlxuICAgICAgICA8cGFya2luZyBjbGFzcz1cInBhcmtpbmdcIj48L3Bhcmtpbmc+XG4gICAgYCxcbiAgICBkaXJlY3RpdmVzOiBbR2VuZXJhdGVDYXIsIEdlbmVyYXRlUGFya2luZywgUGFya2luZ10sXG59KVxuZXhwb3J0IGNsYXNzIFBhcmtpbmdBcHAge1xuICAgIGNvbnN0cnVjdG9yKCkge31cbn0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7OztvQkFxQk0sTUFBTTs7Ozs7Ozs7Ozs7Ozs7OztZQUpaO2dCQUNJO2dCQUFlLENBQUM7Z0JBWHBCO29CQUFDLGdCQUFTLENBQUM7d0JBQ1AsUUFBUSxFQUFFLEtBQUs7d0JBQ2YsUUFBUSxFQUFFLDRGQUdUO3dCQUNELFVBQVUsRUFBRSxDQUFDLDRDQUFlLEVBQUMsMkJBQU8sRUFBRSx3Q0FBYSxDQUFDO3FCQUN2RCxDQUFDOzs4QkFBQTtnQkFLRixpQkFBQztZQUFELENBRkEsQUFFQyxJQUFBO1lBRkQsbUNBRUMsQ0FBQTtZQUVLLE1BQU0sR0FBRTtnQkFDVjtvQkFDRSxJQUFJLEVBQUUsSUFBSTtvQkFDVixTQUFTLEVBQUUsd0NBQWE7aUJBQ3pCO2dCQUNEO29CQUNFLElBQUksRUFBRSxJQUFJO29CQUNWLFNBQVMsRUFBRSw0Q0FBZTtpQkFDM0I7YUFDRixDQUFBIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge0NvbXBvbmVudH0gZnJvbSAnYW5ndWxhcjIvY29yZSc7XG5pbXBvcnQge1BhcmtpbmdTZWFyY2h9IGZyb20gJy4vY29tcG9uZW50cy9wYXJraW5nLXNlYXJjaC5jb21wb25lbnQnXG5pbXBvcnQge1Bhcmtpbmd9IGZyb20gJy4vY29tcG9uZW50cy9wYXJraW5nLmNvbXBvbmVudCdcbi8vaW1wb3J0IHtDYXJ9IGZyb20gJy4vY29tcG9uZW50cy9jYXIuY29tcG9uZW50J1xuaW1wb3J0IHtHZW5lcmF0ZVBhcmtpbmd9IGZyb20gJy4vY29tcG9uZW50cy9nZW5lcmV0ZS1wYXJraW5nLmNvbXBvbmVudCdcbmltcG9ydCB7Um91dGVyTW9kdWxlfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInXG5cbkBDb21wb25lbnQoe1xuICAgIHNlbGVjdG9yOiAnYXBwJyxcbiAgICB0ZW1wbGF0ZTogYFxuICAgICAgICA8cGFya2luZy1zZWFyY2g+PC9wYXJraW5nLXNlYXJjaD5cbiAgICAgICAgPHJvdXRlci1vdXRsZXQ+PC9yb3V0ZXItb3V0bGV0PlxuICAgIGAsXG4gICAgZGlyZWN0aXZlczogW0dlbmVyYXRlUGFya2luZyxQYXJraW5nLCBQYXJraW5nU2VhcmNoXSxcbn0pXG4vLyA8Z2VuZXJhdGUtcGFya2luZz48L2dlbmVyYXRlLXBhcmtpbmc+XG4vLyAgICAgICAgIDxwYXJraW5nIGNsYXNzPVwicGFya2luZ1wiPjwvcGFya2luZz5cbmV4cG9ydCBjbGFzcyBQYXJraW5nQXBwIHtcbiAgICBjb25zdHJ1Y3RvcigpIHt9XG59XG5cbmNvbnN0IHJvdXRlcyA9W1xuICAgIHtcbiAgICAgIHBhdGg6ICdmdCcsXG4gICAgICBjb21wb25lbnQ6IFBhcmtpbmdTZWFyY2hcbiAgICB9LFxuICAgIHtcbiAgICAgIHBhdGg6ICdzZCcsXG4gICAgICBjb21wb25lbnQ6IEdlbmVyYXRlUGFya2luZ1xuICAgIH1cbiAgXSJdfQ==
